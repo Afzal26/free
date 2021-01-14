@@ -6,7 +6,7 @@ class Executor(models.Model):
     phone = models.CharField(max_length=11)
 
     def __str__(self):
-        return "User:{}, phone:{}".format(self.user, self.phone)
+        return 'User:{}, phone:{}'.format(self.user, self.phone)
 
 
 class Customer(models.Model):
@@ -80,9 +80,9 @@ class Message(models.Model):
 
 class Ticket(models.Model):
     SEVERITIES = [
-        ('1','Низкая'),
-        ('2','Средная'),
-        ('3', 'Высокая')
+        ('1','past'),
+        ('2','urta'),
+        ('3', 'kuchli')
     ]
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, blank=True, null=True)
     executor = models.ForeignKey(Executor, on_delete=models.CASCADE, blank=True, null=True)
